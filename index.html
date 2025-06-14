@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BYIRINGIRO Frank - Young Programmer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <div class="left-nav">
+          <div class="logo">
+            <strong>BYIRINGIRO Frank</strong><br />
+            <span>Young programmer</span>
+          </div>
+          <hr style="width: 50%; text-align: left; margin-left: 0" />
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="#">services</a>
+            <a href="activity.html">Activity</a>
+            <a href="cv.html">My C.V</a>
+            <a href="biography.html">Biography</a>
+          </nav>
+        </div>
+        <div class="right-nav">
+          <span class="phone">0796289800</span>
+          <a href="Contact.html" class="login">Contact Me</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="video-banner">
+      <video autoplay muted loop playsinline>
+        <source
+          src="https://www.w3schools.com/howto/rain.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="overlay-content">
+        <h2 class="word" id="typing"></h2>
+        <p>Explore more to know more about me</p>
+        <p>I hope that you will learn a lesson</p>
+        <p></p>
+      </div>
+    </section>
+
+    <main>
+      <section class="intro">
+        <img src="png.jpg" alt="Frank's image" class="profile-pic" />
+        <div class="about">
+          <div class="title">A bit about me</div>
+          <div class="desc">
+            I’m young programmer who has passionate in programming and Improving
+            in technology. In addition am still in s4 MPC.
+          </div>
+        </div>
+      </section>
+
+      <section class="content-boxes">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2VCa-aRK1aLHk1Gw6tU9JpomBp4xzggQYg&s0"
+          alt="Frank's image"
+          class="profile-pic"
+        />
+        <div class="box">
+          <h1>Who am I?</h1>
+          <p>
+            Byiringiro Frank, a Senior 4 MPC student from Ngororero District,
+            Rwanda, is a passionate young programmer interested in web
+            development, electronics (Arduino), and innovative community
+            solutions. He aims to master React, JavaScript, PHP, and SQL to
+            create impactful projects.
+          </p>
+          <a href="#">Read more</a>
+        </div>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2VCa-aRK1aLHk1Gw6tU9JpomBp4xzggQYg&s0"
+          alt="Frank's image"
+          class="profile-pic"
+        />
+        <div class="box">
+          <h1>My Biography</h1>
+          <p>
+            Born in 2007 in Ngororero District, Rwanda, Frank Byiringiro
+            developed a passion for technology despite financial challenges. Now
+            an entrepreneur, he creates affordable tech solutions for
+            underserved communities, inspiring others.
+          </p>
+          <a href="#">Read more</a>
+        </div>
+
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2VCa-aRK1aLHk1Gw6tU9JpomBp4xzggQYg&s0"
+          alt="Frank's image"
+          class="profile-pic"
+        />
+        <div class="box">
+          <h1>What I do</h1>
+          <p>
+            I offer web development services, specializing in front-end and
+            back-end solutions. Additionally, I provide expert electronics
+            services, ensuring seamless technology integration for a dynamic
+            online presence tailored to your needs.
+          </p>
+          <a href="#">Read more</a>
+        </div>
+        <img src="hy.jpg" alt="Frank's image" class="profile-pic" />
+        <div class="box">
+          <h1>Tikkun olam</h1>
+          <p>
+            Born in 2007 in Ngororero District, Rwanda, Frank Byiringiro
+            developed a passion for technology despite financial challenges. Now
+            an entrepreneur, he creates affordable tech solutions for
+            underserved communities, inspiring others.
+          </p>
+          <a href="#">Read more</a>
+        </div>
+      </section>
+
+      <section class="contact-form-section">
+        <h2>📬 Get in Touch</h2>
+        <p>Have a question or want to collaborate? Fill out the form below:</p>
+        <form class="contact-form" action="#" method="post">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Full Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email Address"
+            required
+          />
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+    <script>
+      const word = "Welcome to my E-portfolio!";
+      const typingElem = document.getElementById("typing");
+      let charIndex = 0;
+      function type() {
+        if (charIndex <= word.length) {
+          typingElem.textContent = word.slice(0, charIndex);
+          charIndex++;
+          setTimeout(type, 150);
+        } else {
+          // Pause before restarting
+          setTimeout(() => {
+            charIndex = 0;
+            type();
+          }, 100);
+        }
+      }
+      type();
+    </script>
+    <footer>
+      <div class="footer-container">
+        <div class="contact">
+          <strong>Contact Me</strong>
+          <br />
+
+          <a href="#">Email</a>
+          <a href="#">Linkedn</a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+        <div class="contact">
+          <strong>Quick link</strong><br />
+          <a href="#">Q&A section</a>
+          <a href="#">About me</a>
+          <a href="biography.html">Biography</a>
+          <a href="#">My projects</a>
+        </div>
+        <div class="phone">
+          <strong>Phone</strong>
+          <br />
+          0796289800
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
