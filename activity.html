@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BYIRINGIRO Frank - Achievements</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset and base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f0f2f5;
+        color: #242526;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      a {
+        color: #1877f2;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: #165ecc;
+      }
+
+      /* Topbar */
+      header .topbar {
+        background: #fff;
+        box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
+        padding: 1rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+      .logo strong {
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: #050505;
+      }
+      .logo span {
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #65676b;
+        display: block;
+        margin-top: 3px;
+      }
+      nav a {
+        margin-left: 2rem;
+        font-weight: 600;
+        font-size: 1rem;
+        color: #050505;
+      }
+      nav a:hover {
+        color: #1877f2;
+      }
+      .right-nav {
+        font-weight: 600;
+        color: #65676b;
+        font-size: 1rem;
+      }
+      .right-nav .login {
+        margin-left: 1rem;
+        padding: 6px 14px;
+        background: #1877f2;
+        color: white;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+      .right-nav .login:hover {
+        background: #165ecc;
+      }
+
+      /* Main container */
+      main {
+        flex-grow: 1;
+        max-width: 960px;
+        margin: 3rem auto 5rem;
+        padding: 0 1.5rem;
+        width: 100%;
+      }
+
+      h1 {
+        font-weight: 700;
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #050505;
+      }
+
+      .achievements-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .achievement-box {
+        background: white;
+        border-radius: 12px;
+        padding: 1.8rem 1.5rem 2rem;
+        box-shadow: 0 4px 12px rgb(0 0 0 / 0.07);
+        transition: box-shadow 0.3s ease;
+      }
+      .achievement-box:hover {
+        box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+      }
+      .achievement-box h2 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #050505;
+        border-bottom: 2px solid #1877f2;
+        padding-bottom: 0.4rem;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 1.2rem;
+      }
+      .projects div {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.25s ease;
+      }
+      .projects div:hover {
+        transform: translateY(-6px);
+      }
+      .project-img {
+        width: 100%;
+        height: 100px;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+        margin-bottom: 0.7rem;
+        background: #e9ebee;
+        transition: box-shadow 0.3s ease;
+      }
+      .projects div:hover .project-img {
+        box-shadow: 0 6px 16px rgb(0 0 0 / 0.15);
+      }
+      .projects p {
+        font-size: 0.95rem;
+        color: #65676b;
+        font-weight: 600;
+      }
+
+      /* Footer */
+      footer {
+        background: white;
+        padding: 2rem 3rem;
+        box-shadow: 0 -1px 6px rgb(0 0 0 / 0.05);
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
+        color: #65676b;
+        font-size: 0.95rem;
+      }
+      footer .footer-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 960px;
+        margin: auto;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+      footer .contact {
+        min-width: 140px;
+      }
+      footer strong {
+        display: block;
+        margin-bottom: 0.6rem;
+        color: #050505;
+        font-weight: 600;
+      }
+      footer a {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #1877f2;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      footer a:hover {
+        color: #165ecc;
+      }
+      footer .phone {
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        nav a {
+          margin-left: 1rem;
+          font-size: 0.9rem;
+        }
+        .achievement-box {
+          padding: 1.2rem 1rem 1.5rem;
+        }
+        .projects div {
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <div class="left-nav">
+          <div class="logo">
+            <strong>BYIRINGIRO Frank</strong><br />
+            <span>Young programmer</span>
+          </div>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Services</a>
+            <a href="activity.html">Activity</a>
+            <a href="#">About</a>
+            <a href="biography.html">Biography</a>
+          </nav>
+        </div>
+        <div class="right-nav">
+          <span class="phone">0796289800</span>
+          <a href="#" class="login">Contact Me</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="achievements-section">
+        <h1>My Achievements</h1>
+        <div class="achievements-container">
+          <!-- Certificate Section -->
+          <div class="achievement-box">
+            <h2>Certificates</h2>
+            <div class="projects">
+              <div>
+                <img
+                  src="Capture.PNG"
+                  alt="Wavumbuzi Certificate"
+                  class="project-img"
+                />
+                <p>Certificate of Wavumbuzi Challenge</p>
+              </div>
+              <div>
+                <img
+                  src="Capture.PNG"
+                  alt="STEM Camp Certificate"
+                  class="project-img"
+                />
+                <p>Certificate of STEM Camp</p>
+              </div>
+              <div>
+                <img
+                  src="Capture.PNG"
+                  alt="Dreamer Academy Certificate"
+                  class="project-img"
+                />
+                <p>Certificate of Dreamer Academy Camp</p>
+              </div>
+            </div>
+          </div>
+          <!-- Projects Section -->
+          <div class="achievement-box">
+            <h2>Projects</h2>
+            <div class="projects">
+              <div>
+                <img
+                  src="#"
+                  alt="Van de Graaff Generator"
+                  class="project-img"
+                />
+                <p>Van de Graaff Generator</p>
+              </div>
+              <div>
+                <img src="#" alt="Mosquito Zapper Lamp" class="project-img" />
+                <p>Mosquito Zapper Lamp</p>
+              </div>
+              <div>
+                <img src="#" alt="School Dashboard" class="project-img" />
+                <p>School Dashboard</p>
+              </div>
+              <div>
+                <img src="#" alt="Smart Street Lamp" class="project-img" />
+                <p>Smart Street Lamp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="contact">
+          <strong>Contact Me</strong>
+          <a href="mailto:frankbyiringiro2@gmail.com">Email</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+        <div class="contact">
+          <strong>Quick Links</strong>
+          <a href="#">Q&A Section</a>
+          <a href="#">About Me</a>
+          <a href="biography.html">Biography</a>
+          <a href="#">My Projects</a>
+        </div>
+        <div class="phone">
+          <strong>Phone</strong>
+          <br />
+          0796289800
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
