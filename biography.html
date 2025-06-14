@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BYIRINGIRO Frank - Young Programmer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #111;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      .topbar {
+        background-color: #111;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 10px #00ffaa;
+      }
+
+      .left-nav .logo strong {
+        color: #00ffaa;
+        font-size: 24px;
+        transition: color 0.3s ease;
+      }
+
+      .left-nav .logo span {
+        color: #b984dc;
+        font-size: 14px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
+
+      nav a:hover {
+        color: #00ffaa;
+        transform: translateY(-2px);
+      }
+
+      .right-nav {
+        text-align: right;
+      }
+
+      .right-nav .phone {
+        color: #b984dc;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .right-nav .login {
+        background-color: #00ffaa;
+        color: #111;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .right-nav .login:hover {
+        background-color: #b984dc;
+        color: #000;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 20px;
+        animation: fadeIn 1.2s ease-in-out;
+      }
+
+      .card {
+        background-color: #1a1a1a;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 0 15px #00ffaa;
+        transition: transform 0.4s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.02);
+      }
+
+      .card h2 {
+        color: #00ffaa;
+        font-size: 28px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #b984dc;
+        padding-bottom: 10px;
+      }
+
+      .card p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #ddd;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card p.signature {
+        text-align: right;
+        font-style: italic;
+        color: #b984dc;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #333;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        nav {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <div class="left-nav">
+          <div class="logo">
+            <strong>BYIRINGIRO Frank</strong><br />
+            <span>Young programmer</span>
+          </div>
+          <hr style="width: 50%; text-align: left; margin-left: 0" />
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Services</a>
+            <a href="activity.html">Activity</a>
+            <a href="cv.html">My C.V</a>
+            <a href="biography.html">Biography</a>
+          </nav>
+        </div>
+        <div class="right-nav">
+          <span class="phone">0796289800</span>
+          <a href="#" class="login">Contact Me</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <h2>My Life Story</h2>
+        <p>
+          I was born with a curious mind and a passion for solving problems.
+          From a young age, I found joy in learning how things work—whether it
+          was fixing electronics, helping classmates with computers, or
+          experimenting with science kits.
+        </p>
+        <p>
+          I joined boarding school, where I pushed myself to learn deeply—not
+          just in class, but through real-world challenges. I became the
+          president of the HeForShe club, a programmer in my school, and proudly
+          represented my school in the STEM Day and science competitions. I even
+          ranked among the top 100 students nationwide in the Rwanda Math
+          Olympiad.
+        </p>
+        <p>
+          I’ve taught young children through Save the Children and helped them
+          learn how to read and grow socially. These experiences shaped my
+          belief that leadership is about service and impact.
+        </p>
+        <p>
+          Today, I’m combining tech and purpose to build smart systems—like a
+          mosquito-zapping streetlamp powered by solar energy and a school
+          dashboard that empowers students. My dream is to one day create
+          innovations that serve Africa and the world.
+        </p>
+        <p class="signature">— This is my journey. It's just the beginning.</p>
+      </div>
+    </div>
+  </body>
+</html>
