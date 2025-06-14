@@ -100,7 +100,7 @@ nav .login {
   color: black;
   padding: 20px;
   border-radius: 8px;
-  max-width: 25%;
+  max-width: 20%;
   line-height: 1.6;
   text-align: center;
 }
@@ -230,6 +230,54 @@ footer {
   background-color: #b984dc;
   color: black;
   box-shadow: 0 0 10px #b984dc;
+}
+
+.recommendation-section .section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+
+.recommendation-section .section-intro {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-emphasis: none;
+  text-align: center;
+}
+
+.rec-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.rec-btn {
+  background-color: #00ffaa;
+  color: #0white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.rec-btn:hover {
+  background-color: #b984dc;
+  color: white;
+}
+
+.rec-note {
+  font-size: 1rem;
+  text-align: center;
+  color: #ccc;
+}
+
+.rec-link {
+  color: #66ccff;
+  text-decoration: underline;
 }
 
 /* Responsive Styles */
