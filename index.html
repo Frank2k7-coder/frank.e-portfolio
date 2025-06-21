@@ -3,35 +3,768 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BYIRINGIRO Frank - Young Programmer</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta
+      name="description"
+      content="Portfolio of Byiringiro Frank - Young programmer and innovator from Rwanda specializing in web development and electronics"
+    />
+    <meta
+      name="keywords"
+      content="portfolio, web developer, Rwanda, programmer, Arduino, student"
+    />
+    <meta name="author" content="Byiringiro Frank" />
+    <title>BYIRINGIRO Frank | Young Programmer & Innovator | Rwanda</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Loader Styles */
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      .loader-content {
+        text-align: center;
+      }
+
+      .loader-spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid var(--light-gray);
+        border-top-color: var(--primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 1rem;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loader p {
+        color: var(--dark);
+        font-weight: 500;
+      }
+
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary: #10b981;
+        --dark: #1e293b;
+        --light: #f8fafc;
+        --gray: #64748b;
+        --light-gray: #e2e8f0;
+        --accent: #f59e0b;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", "Inter", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--light);
+        overflow-x: hidden;
+      }
+
+      /* Header Styles */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+      }
+
+      header.scrolled {
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .left-nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .logo {
+        font-family: "Inter", sans-serif;
+      }
+
+      .logo strong {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: -0.5px;
+      }
+
+      .logo span {
+        font-size: 0.9rem;
+        color: var(--gray);
+        font-weight: 500;
+      }
+
+      nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        font-size: 0.95rem;
+        position: relative;
+        transition: var(--transition);
+      }
+
+      nav a:hover {
+        color: var(--primary);
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: var(--transition);
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      .right-nav .phone {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+        color: var(--dark);
+      }
+
+      .right-nav .phone i {
+        color: var(--primary);
+      }
+
+      /* Hero Section */
+      .video-banner {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+      }
+
+      .video-banner video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .overlay-content {
+        text-align: center;
+        color: white;
+        padding: 0 2rem;
+        max-width: 800px;
+        z-index: 1;
+        position: relative;
+      }
+
+      .overlay-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        border-radius: 10px;
+        padding: 2rem;
+      }
+
+      .word {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .overlay-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+      }
+
+      .cta-button {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.8rem 2rem;
+        background-color: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: var(--transition);
+        border: 2px solid transparent;
+      }
+
+      .cta-button:hover {
+        background-color: transparent;
+        border-color: white;
+        transform: translateY(-3px);
+      }
+
+      /* Main Content */
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      section {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: var(--dark);
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background-color: var(--primary);
+        border-radius: 2px;
+      }
+
+      /* Intro Section */
+      .intro {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .profile-pic {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+      }
+
+      .profile-pic:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .about {
+        flex: 1;
+      }
+
+      .title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+      }
+
+      .desc {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--gray);
+      }
+
+      /* Content Boxes */
+      .content-boxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .box {
+        background-color: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+        border: 1px solid var(--light-gray);
+      }
+
+      .box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        border-color: var(--primary);
+      }
+
+      .box h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .box h1 i {
+        color: var(--accent);
+      }
+
+      .box p {
+        color: var(--gray);
+        line-height: 1.7;
+      }
+
+      /* Recommendation Section */
+      .recommendation-section {
+        background-color: #f1f5f9;
+        border-radius: 15px;
+        padding: 3rem;
+        text-align: center;
+      }
+
+      .section-heading {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .section-intro {
+        font-size: 1.1rem;
+        color: var(--gray);
+        margin-bottom: 2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .rec-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      }
+
+      .rec-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        background-color: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .rec-btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px);
+      }
+
+      .rec-note {
+        font-size: 0.95rem;
+        color: var(--gray);
+      }
+
+      .rec-link {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .rec-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Contact Form */
+      .contact-form-section {
+        background-color: white;
+        border-radius: 15px;
+        padding: 3rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-form-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: var(--dark);
+      }
+
+      .contact-form-section p {
+        text-align: center;
+        color: var(--gray);
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        padding: 1rem;
+        border: 1px solid var(--light-gray);
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      .contact-form textarea {
+        grid-column: 1 / -1;
+        resize: vertical;
+        min-height: 150px;
+      }
+
+      .contact-form button {
+        grid-column: 1 / -1;
+        padding: 1rem;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .contact-form button:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .footer-container div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .footer-container strong {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: white;
+      }
+
+      .footer-container a {
+        color: var(--light-gray);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-container a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--light-gray);
+        font-size: 0.9rem;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 1s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+      .delay-3 {
+        animation-delay: 0.6s;
+      }
+
+      /* Projects Section */
+      .projects-section {
+        padding: 5rem 0;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .project-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.1);
+      }
+
+      .project-info {
+        padding: 1.5rem;
+      }
+
+      .project-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: var(--dark);
+      }
+
+      .project-info p {
+        color: var(--gray);
+        margin-bottom: 1rem;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-tech span {
+        background: var(--light-gray);
+        color: var(--dark);
+        padding: 0.3rem 0.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .project-link:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .intro {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .profile-pic {
+          width: 250px;
+          height: 250px;
+        }
+
+        .word {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .topbar {
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1rem;
+        }
+
+        .left-nav {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .contact-form {
+          grid-template-columns: 1fr;
+        }
+
+        .word {
+          font-size: 2rem;
+        }
+
+        .overlay-content p {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .content-boxes {
+          grid-template-columns: 1fr;
+        }
+
+        .box {
+          padding: 1.5rem;
+        }
+
+        .recommendation-section,
+        .contact-form-section {
+          padding: 2rem 1rem;
+        }
+
+        .rec-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header>
+    <div class="loader">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <p>Loading Portfolio...</p>
+      </div>
+    </div>
+    <header id="header">
       <div class="topbar">
         <div class="left-nav">
           <div class="logo">
             <strong>BYIRINGIRO Frank</strong><br />
-            <span>Young programmer</span>
+            <span>Young programmer & innovator</span>
           </div>
-          <hr style="width: 50%; text-align: left; margin-left: 0" />
           <nav>
             <a href="index.html">Home</a>
-            <a href="#recommandation">Documents</a>
-            <a href="#contact">Contact me</a>
+            <a href="#contact">Contact</a>
             <a href="activity.html">Activity</a>
             <a href="cv.html">My C.V</a>
             <a href="biography.html">Biography</a>
           </nav>
-          </nav>
         </div>
         <div class="right-nav">
-          <span class="phone">0796289800</span>
-          
+          <span class="phone"><i class="fas fa-phone"></i> 0796289800</span>
         </div>
       </div>
     </header>
@@ -43,118 +776,165 @@
           type="video/mp4"
         />
       </video>
-      <div class="overlay-content">
+      <div class="overlay-content fade-in">
         <h2 class="word" id="typing"></h2>
-        <p>Explore more to know more about me</p>
-        <p>I hope that you will learn a lesson</p>
-        <p></p>
+        <p class="delay-1">
+          Explore more to know about my journey in technology
+        </p>
+        <p class="delay-2">Turning ideas into innovative solutions</p>
+        <a href="#about" class="cta-button delay-3"
+          >Discover More <i class="fas fa-arrow-down"></i
+        ></a>
       </div>
     </section>
 
     <main>
-      <section class="intro">
-        <img src="png.jpg" alt="Frank's image" class="profile-pic" />
-        <div class="about">
+      <section class="intro" id="about">
+        <img src="png.jpg" alt="Frank's image" class="profile-pic fade-in" />
+        <div class="about fade-in delay-1">
           <div class="title">A bit about me</div>
           <div class="desc">
-            I’m young programmer who has passionate in programming and Improving
-            in technology. In addition am still in s4 MPC.
+            I'm a passionate young programmer currently in S4 MPC with a deep
+            interest in technology and innovation. My journey combines academic
+            excellence with practical skills in web development and electronics.
+            I believe in using technology to solve real-world problems and
+            create positive change in my community.
           </div>
         </div>
       </section>
 
-      <section class="content-boxes">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2VCa-aRK1aLHk1Gw6tU9JpomBp4xzggQYg&s0"
-          alt="Frank's image"
-          class="profile-pic"
-        />
-        <div class="box">
-          <h1>Who am I?</h1>
-          <p>
-            Byiringiro Frank, a Senior 4 MPC student from Ngororero District,
-            Rwanda, is a passionate young programmer interested in web
-            development, electronics (Arduino), and innovative community
-            solutions. He aims to master React, JavaScript, PHP, and SQL to
-            create impactful projects.
-          </p>
-        </div>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2VCa-aRK1aLHk1Gw6tU9JpomBp4xzggQYg&s0"
-          alt="Frank's image"
-          class="profile-pic"
-        />
-        <div class="box">
-          <h1>My Biography</h1>
-          <p>
-            Born in 2007 in Ngororero District, Rwanda, Frank Byiringiro
-            developed a passion for technology despite financial challenges. Now
-            an entrepreneur, he creates affordable tech solutions for
-            underserved communities, inspiring others.
-          </p>
-        </div>
-
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2VCa-aRK1aLHk1Gw6tU9JpomBp4xzggQYg&s0"
-          alt="Frank's image"
-          class="profile-pic"
-        />
-        <div class="box">
-          <h1>What I do</h1>
-          <p>
-            I offer web development services, specializing in front-end and
-            back-end solutions. Additionally, I provide expert electronics
-            services, ensuring seamless technology integration for a dynamic
-            online presence tailored to your needs.
-          </p>
-        </div>
-        <img src="hy.jpg" alt="Frank's image" class="profile-pic" />
-        <div class="box">
-          <h1>Tikkun olam</h1>
-          <p>
-            As part of Tikkun Olam, I’m passionate about giving back by helping
-            others succeed academically. I support fellow students through
-            guidance, advice, and sharing what I’ve learned—especially in
-            electronics and science. I believe in using my skills to lift others
-            and make a positive impact in their learning journey.
-          </p>
+      <section class="projects-section" id="projects">
+        <h2 class="section-title">
+          <i class="fas fa-laptop-code"></i> My Projects
+        </h2>
+        <div class="projects-grid">
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="project1.jpg" alt="Web Development Project" />
+            </div>
+            <div class="project-info">
+              <h3>E-Commerce Website</h3>
+              <p>A full-featured online store built with React and Node.js</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+              <a href="#" class="project-link"
+                >View Project <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="project-card fade-in delay-1">
+            <div class="project-image">
+              <img src="project2.jpg" alt="Arduino Project" />
+            </div>
+            <div class="project-info">
+              <h3>Smart Irrigation System</h3>
+              <p>Automated plant watering system using Arduino and sensors</p>
+              <div class="project-tech">
+                <span>Arduino</span>
+                <span>C++</span>
+                <span>IoT</span>
+              </div>
+              <a href="#" class="project-link"
+                >View Project <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
         </div>
       </section>
-      <section id="recommandation" class="recommendation-section">
+
+      <section class="content-section">
+        <h2 class="section-title">My Journey</h2>
+        <div class="content-boxes">
+          <div class="box fade-in">
+            <h1><i class="fas fa-user"></i> Who am I?</h1>
+            <p>
+              Byiringiro Frank, a Senior 4 MPC student from Ngororero District,
+              Rwanda, is a passionate young programmer interested in web
+              development, electronics (Arduino), and innovative community
+              solutions. He aims to master React, JavaScript, PHP, and SQL to
+              create impactful projects that bridge technology gaps in
+              underserved communities.
+            </p>
+          </div>
+          <div class="box fade-in delay-1">
+            <h1><i class="fas fa-book"></i> My Biography</h1>
+            <p>
+              Born in 2007 in Ngororero District, Rwanda, Frank Byiringiro
+              developed a passion for technology despite financial challenges.
+              Now an entrepreneur, he creates affordable tech solutions for
+              underserved communities while inspiring others through his journey
+              of perseverance and innovation.
+            </p>
+          </div>
+          <div class="box fade-in delay-2">
+            <h1><i class="fas fa-code"></i> What I do</h1>
+            <p>
+              I specialize in full-stack web development and Arduino-based
+              electronics projects. My services include building responsive
+              websites, developing custom web applications, and creating
+              innovative electronic solutions tailored to specific needs. I'm
+              particularly interested in projects that combine both domains for
+              smart systems.
+            </p>
+          </div>
+          <div class="box fade-in delay-3">
+            <h1><i class="fas fa-hands-helping"></i> Tikkun olam</h1>
+            <p>
+              As part of Tikkun Olam, I'm committed to using my skills to help
+              others succeed academically. I mentor students in STEM subjects,
+              particularly electronics and programming, sharing knowledge
+              through workshops and one-on-one guidance. My goal is to create a
+              ripple effect of learning and empowerment in my community.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="recommendation-section fade-in">
         <div class="container">
-          <h2 class="section-heading">📄 Recommendations & Cover Letter</h2>
+          <h2 class="section-heading">
+            <i class="fas fa-file-alt"></i> Recommendations & Cover Letter
+          </h2>
           <p class="section-intro">
-            These documents reflect my professional journey and academic
-            commitment:
+            These documents reflect my professional journey, academic
+            commitment, and the impact I've made:
           </p>
 
           <div class="rec-buttons">
             <a
-              href="https://docs.google.com/document/d/e/2PACX-1vQnhcV8b5kRUyv3z8WsSAg8jXS7xgs9fC8gCVPD1d3Oh2tjQdr9dZfMntGiLOkNkgkC_LWOvYFa3-Y0/pub"
+              href="files/Recommendation_Letter_ByiringiroFrank.pdf"
               target="_blank"
               class="rec-btn"
-              >📌 View Recommendation Letter</a
             >
+              <i class="fas fa-download"></i> Recommendation Letter
+            </a>
             <a
               href="https://docs.google.com/document/d/e/2PACX-1vSRFJ4wZqPj_URr89IwvNSKPXCmSHgx73GM6yYmrRFdrrbMXuLG6S0uKazDQ_L2jblsIReTrgEWbRgV/pub"
               target="_blank"
               class="rec-btn"
-              >📌 View Cover Letter</a
             >
+              <i class="fas fa-eye"></i> View Cover Letter
+            </a>
           </div>
 
           <p class="rec-note">
-            Want to request a new letter or need help?
-            <a href="mailto:fbyiringiro24@gmail.com" class="rec-link"
-              >Email me here</a
+            Need a customized letter or have questions?
+            <a href="mailto:fbyiringiro24@gmail.com" class="rec-link">
+              <i class="fas fa-envelope"></i> Email me here </a
             >.
           </p>
         </div>
       </section>
 
-      <section class="contact-form-section" id="contact">
-        <h2>📬 Get in Touch</h2>
-        <p>Have a question or want to collaborate? Fill out the form below:</p>
+      <section class="contact-form-section fade-in" id="contact">
+        <h2><i class="fas fa-envelope-open-text"></i> Get in Touch</h2>
+        <p>
+          Have a project in mind or want to collaborate? I'd love to hear from
+          you!
+        </p>
         <form class="contact-form" action="#" method="post">
           <input
             type="text"
@@ -175,55 +955,120 @@
             placeholder="Your Message"
             required
           ></textarea>
-          <button type="submit">Send Message</button>
+          <button type="submit">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
         </form>
       </section>
     </main>
+
+    <footer class="fade-in">
+      <div class="footer-container">
+        <div class="contact">
+          <strong>Connect With Me</strong>
+          <a href="mailto:fbyiringiro24@gmail.com"
+            ><i class="fas fa-envelope"></i> Email</a
+          >
+          <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        </div>
+        <div class="contact">
+          <strong>Quick Links</strong>
+          <a href="#"><i class="fas fa-question-circle"></i> Q&A</a>
+          <a href="#about"><i class="fas fa-user"></i> About</a>
+          <a href="biography.html"><i class="fas fa-book"></i> Biography</a>
+          <a href="#"><i class="fas fa-laptop-code"></i> Projects</a>
+        </div>
+        <div class="contact">
+          <strong>Contact Info</strong>
+          <span><i class="fas fa-phone"></i> 0796289800</span>
+          <span><i class="fas fa-map-marker-alt"></i> Ngororero, Rwanda</span>
+          <span><i class="fas fa-graduation-cap"></i> S4 MPC Student</span>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2023 BYIRINGIRO Frank. All rights reserved.
+        <span style="display: block; margin-top: 0.5rem"
+          >Built with <i class="fas fa-heart" style="color: #ff4757"></i> and
+          passion for technology</span
+        >
+      </div>
+    </footer>
+
     <script>
+      // Typing animation
       const word = "Welcome to my E-portfolio!";
       const typingElem = document.getElementById("typing");
       let charIndex = 0;
+
       function type() {
         if (charIndex <= word.length) {
           typingElem.textContent = word.slice(0, charIndex);
           charIndex++;
           setTimeout(type, 150);
         } else {
-          // Pause before restarting
           setTimeout(() => {
             charIndex = 0;
             type();
-          }, 100);
+          }, 3000);
         }
       }
-      type();
-    </script>
-    <footer>
-      <div class="footer-container">
-        <div class="contact">
-          <strong>Contact Me</strong>
-          <br />
 
-          <a href="#">Email</a>
-          <a href="#">Linkedn</a>
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-        </div>
-        <div class="contact">
-          <strong>Quick link</strong><br />
-          <a href="#">Q&A section</a>
-          <a href="#">About me</a>
-          <a href="biography.html">Biography</a>
-          <a href="#">My projects</a>
-        </div>
-        <div class="phone">
-          <strong>Phone</strong>
-          <br />
-          0796289800
-        </div>
-      </div>
-    </footer>
+      type();
+
+      // Header scroll effect
+      const header = document.getElementById("header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Animation on scroll
+      const fadeElements = document.querySelectorAll(".fade-in");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      fadeElements.forEach((element) => {
+        element.style.opacity = 0;
+        element.style.transform = "translateY(20px)";
+        element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(element);
+      });
+
+      // Handle page loading
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          const loader = document.querySelector(".loader");
+          loader.style.opacity = "0";
+          setTimeout(() => (loader.style.display = "none"), 500);
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
-
-    
