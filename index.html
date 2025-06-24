@@ -2,21 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio of Byiringiro Frank - Young programmer and innovator from Rwanda specializing in web development and electronics"
-    />
-    <meta
-      name="keywords"
-      content="portfolio, web developer, Rwanda, programmer, Arduino, student"
-    />
     <meta name="author" content="Byiringiro Frank" />
     <title>BYIRINGIRO Frank | Young Programmer & Innovator | Rwanda</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -36,11 +23,9 @@
         z-index: 9999;
         transition: opacity 0.5s ease;
       }
-
       .loader-content {
         text-align: center;
       }
-
       .loader-spinner {
         width: 50px;
         height: 50px;
@@ -50,18 +35,15 @@
         animation: spin 1s linear infinite;
         margin: 0 auto 1rem;
       }
-
       @keyframes spin {
         to {
           transform: rotate(360deg);
         }
       }
-
       .loader p {
         color: var(--dark);
         font-weight: 500;
       }
-
       :root {
         --primary: #2563eb;
         --primary-dark: #1d4ed8;
@@ -73,13 +55,11 @@
         --accent: #f59e0b;
         --transition: all 0.3s ease;
       }
-
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-
       body {
         font-family: "Poppins", "Inter", sans-serif;
         line-height: 1.6;
@@ -87,7 +67,6 @@
         background-color: var(--light);
         overflow-x: hidden;
       }
-
       /* Header Styles */
       header {
         position: fixed;
@@ -99,12 +78,10 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         transition: var(--transition);
       }
-
       header.scrolled {
         background-color: rgba(255, 255, 255, 0.98);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       }
-
       .topbar {
         display: flex;
         justify-content: space-between;
@@ -113,35 +90,29 @@
         max-width: 1400px;
         margin: 0 auto;
       }
-
       .left-nav {
         display: flex;
         align-items: center;
         gap: 2rem;
       }
-
       .logo {
         font-family: "Inter", sans-serif;
       }
-
       .logo strong {
         font-size: 1.5rem;
         font-weight: 700;
         color: var(--primary);
         letter-spacing: -0.5px;
       }
-
       .logo span {
         font-size: 0.9rem;
         color: var(--gray);
         font-weight: 500;
       }
-
       nav {
         display: flex;
         gap: 1.5rem;
       }
-
       nav a {
         text-decoration: none;
         color: var(--dark);
@@ -150,11 +121,9 @@
         position: relative;
         transition: var(--transition);
       }
-
       nav a:hover {
         color: var(--primary);
       }
-
       nav a::after {
         content: "";
         position: absolute;
@@ -165,11 +134,9 @@
         background-color: var(--primary);
         transition: var(--transition);
       }
-
       nav a:hover::after {
         width: 100%;
       }
-
       .right-nav .phone {
         display: flex;
         align-items: center;
@@ -177,11 +144,9 @@
         font-weight: 500;
         color: var(--dark);
       }
-
       .right-nav .phone i {
         color: var(--primary);
       }
-
       /* Hero Section */
       .video-banner {
         position: relative;
@@ -193,7 +158,6 @@
         justify-content: center;
         margin-top: 0;
       }
-
       .video-banner video {
         position: absolute;
         top: 0;
@@ -203,7 +167,6 @@
         object-fit: cover;
         z-index: -1;
       }
-
       .overlay-content {
         text-align: center;
         color: white;
@@ -212,7 +175,6 @@
         z-index: 1;
         position: relative;
       }
-
       .overlay-content::before {
         content: "";
         position: absolute;
@@ -225,7 +187,6 @@
         border-radius: 10px;
         padding: 2rem;
       }
-
       .word {
         font-size: 3.5rem;
         font-weight: 700;
@@ -234,13 +195,11 @@
         color: white;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       }
-
       .overlay-content p {
         font-size: 1.2rem;
         margin-bottom: 1rem;
         opacity: 0.9;
       }
-
       .cta-button {
         display: inline-block;
         margin-top: 2rem;
@@ -253,24 +212,20 @@
         transition: var(--transition);
         border: 2px solid transparent;
       }
-
       .cta-button:hover {
         background-color: transparent;
         border-color: white;
         transform: translateY(-3px);
       }
-
       /* Main Content */
       main {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 2rem;
       }
-
       section {
         padding: 5rem 0;
       }
-
       .section-title {
         font-size: 2.5rem;
         font-weight: 700;
@@ -279,7 +234,6 @@
         position: relative;
         display: inline-block;
       }
-
       .section-title::after {
         content: "";
         position: absolute;
@@ -290,7 +244,6 @@
         background-color: var(--primary);
         border-radius: 2px;
       }
-
       /* Intro Section */
       .intro {
         display: flex;
@@ -298,7 +251,6 @@
         gap: 3rem;
         margin-top: 2rem;
       }
-
       .profile-pic {
         width: 300px;
         height: 300px;
@@ -308,29 +260,24 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         transition: var(--transition);
       }
-
       .profile-pic:hover {
         transform: scale(1.05);
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
       }
-
       .about {
         flex: 1;
       }
-
       .title {
         font-size: 1.8rem;
         font-weight: 600;
         margin-bottom: 1.5rem;
         color: var(--primary);
       }
-
       .desc {
         font-size: 1.1rem;
         line-height: 1.8;
         color: var(--gray);
       }
-
       /* Content Boxes */
       .content-boxes {
         display: grid;
@@ -338,7 +285,6 @@
         gap: 2rem;
         margin-top: 3rem;
       }
-
       .box {
         background-color: white;
         border-radius: 10px;
@@ -347,13 +293,11 @@
         transition: var(--transition);
         border: 1px solid var(--light-gray);
       }
-
       .box:hover {
         transform: translateY(-10px);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         border-color: var(--primary);
       }
-
       .box h1 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
@@ -362,16 +306,13 @@
         align-items: center;
         gap: 0.5rem;
       }
-
       .box h1 i {
         color: var(--accent);
       }
-
       .box p {
         color: var(--gray);
         line-height: 1.7;
       }
-
       /* Recommendation Section */
       .recommendation-section {
         background-color: #f1f5f9;
@@ -379,13 +320,11 @@
         padding: 3rem;
         text-align: center;
       }
-
       .section-heading {
         font-size: 2rem;
         margin-bottom: 1rem;
         color: var(--dark);
       }
-
       .section-intro {
         font-size: 1.1rem;
         color: var(--gray);
@@ -394,7 +333,6 @@
         margin-left: auto;
         margin-right: auto;
       }
-
       .rec-buttons {
         display: flex;
         justify-content: center;
@@ -402,7 +340,6 @@
         flex-wrap: wrap;
         margin-bottom: 2rem;
       }
-
       .rec-btn {
         display: inline-flex;
         align-items: center;
@@ -415,27 +352,22 @@
         font-weight: 500;
         transition: var(--transition);
       }
-
       .rec-btn:hover {
         background-color: var(--primary-dark);
         transform: translateY(-3px);
       }
-
       .rec-note {
         font-size: 0.95rem;
         color: var(--gray);
       }
-
       .rec-link {
         color: var(--primary);
         text-decoration: none;
         font-weight: 500;
       }
-
       .rec-link:hover {
         text-decoration: underline;
       }
-
       /* Contact Form */
       .contact-form-section {
         background-color: white;
@@ -443,21 +375,18 @@
         padding: 3rem;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
       }
-
       .contact-form-section h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
         text-align: center;
         color: var(--dark);
       }
-
       .contact-form-section p {
         text-align: center;
         color: var(--gray);
         margin-bottom: 2rem;
         font-size: 1.1rem;
       }
-
       .contact-form {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -465,7 +394,6 @@
         max-width: 800px;
         margin: 0 auto;
       }
-
       .contact-form input,
       .contact-form textarea {
         padding: 1rem;
@@ -475,20 +403,17 @@
         font-size: 1rem;
         transition: var(--transition);
       }
-
       .contact-form input:focus,
       .contact-form textarea:focus {
         outline: none;
         border-color: var(--primary);
         box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
       }
-
       .contact-form textarea {
         grid-column: 1 / -1;
         resize: vertical;
         min-height: 150px;
       }
-
       .contact-form button {
         grid-column: 1 / -1;
         padding: 1rem;
@@ -501,19 +426,16 @@
         cursor: pointer;
         transition: var(--transition);
       }
-
       .contact-form button:hover {
         background-color: var(--primary-dark);
         transform: translateY(-3px);
       }
-
       /* Footer */
       footer {
         background-color: var(--dark);
         color: white;
         padding: 4rem 0 2rem;
       }
-
       .footer-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -522,30 +444,25 @@
         margin: 0 auto;
         padding: 0 2rem;
       }
-
       .footer-container div {
         display: flex;
         flex-direction: column;
         gap: 1rem;
       }
-
       .footer-container strong {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
         color: white;
       }
-
       .footer-container a {
         color: var(--light-gray);
         text-decoration: none;
         transition: var(--transition);
       }
-
       .footer-container a:hover {
         color: white;
         text-decoration: underline;
       }
-
       .copyright {
         text-align: center;
         padding-top: 2rem;
@@ -554,7 +471,6 @@
         color: var(--light-gray);
         font-size: 0.9rem;
       }
-
       /* Animations */
       @keyframes fadeIn {
         from {
@@ -566,11 +482,9 @@
           transform: translateY(0);
         }
       }
-
       .fade-in {
         animation: fadeIn 1s ease forwards;
       }
-
       .delay-1 {
         animation-delay: 0.2s;
       }
@@ -580,70 +494,59 @@
       .delay-3 {
         animation-delay: 0.6s;
       }
-
       /* Projects Section */
       .projects-section {
         padding: 5rem 0;
       }
-
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        gap: 1rem;
         margin-top: 2rem;
       }
-
       .project-card {
         background: white;
+        width: 350px;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         transition: var(--transition);
       }
-
       .project-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
       }
-
       .project-image {
         height: 200px;
         overflow: hidden;
       }
-
       .project-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
       }
-
       .project-card:hover .project-image img {
         transform: scale(1.1);
       }
-
       .project-info {
         padding: 1.5rem;
       }
-
       .project-info h3 {
         font-size: 1.3rem;
         margin-bottom: 0.5rem;
         color: var(--dark);
       }
-
       .project-info p {
         color: var(--gray);
         margin-bottom: 1rem;
       }
-
       .project-tech {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
         margin-bottom: 1rem;
       }
-
       .project-tech span {
         background: var(--light-gray);
         color: var(--dark);
@@ -652,7 +555,6 @@
         font-size: 0.8rem;
         font-weight: 500;
       }
-
       .project-link {
         display: inline-flex;
         align-items: center;
@@ -662,79 +564,64 @@
         font-weight: 500;
         transition: var(--transition);
       }
-
       .project-link:hover {
         color: var(--primary-dark);
         text-decoration: underline;
       }
-
       /* Responsive Design */
       @media (max-width: 992px) {
         .intro {
           flex-direction: column;
           text-align: center;
         }
-
         .profile-pic {
           width: 250px;
           height: 250px;
         }
-
         .word {
           font-size: 2.5rem;
         }
       }
-
       @media (max-width: 768px) {
         .topbar {
           flex-direction: column;
           gap: 1rem;
           padding: 1rem;
         }
-
         .left-nav {
           flex-direction: column;
           gap: 1rem;
           text-align: center;
         }
-
         nav {
           flex-wrap: wrap;
           justify-content: center;
         }
-
         .contact-form {
           grid-template-columns: 1fr;
         }
-
         .word {
           font-size: 2rem;
         }
-
         .overlay-content p {
           font-size: 1rem;
         }
       }
-
       @media (max-width: 576px) {
         .content-boxes {
           grid-template-columns: 1fr;
         }
-
         .box {
           padding: 1.5rem;
         }
-
         .recommendation-section,
         .contact-form-section {
           padding: 2rem 1rem;
         }
-
         .rec-buttons {
           flex-direction: column;
           align-items: center;
         }
-
         .section-title {
           font-size: 2rem;
         }
@@ -810,11 +697,11 @@
         <div class="projects-grid">
           <div class="project-card fade-in">
             <div class="project-image">
-              <img src="project1.jpg" alt="Web Development Project" />
+              <img src="stem.png" alt="Web Development Project" />
             </div>
             <div class="project-info">
-              <h3>E-Commerce Website</h3>
-              <p>A full-featured online store built with React and Node.js</p>
+              <h3>Lumi sense</h3>
+              <p>Me and my friends we present our project on stem day</p>
               <div class="project-tech">
                 <span>React</span>
                 <span>Node.js</span>
@@ -825,13 +712,33 @@
               ></a>
             </div>
           </div>
-          <div class="project-card fade-in delay-1">
+          <div class="project-card fade-in">
             <div class="project-image">
-              <img src="project2.jpg" alt="Arduino Project" />
+              <img src="e-bike1.png" alt="Web Development Project" />
             </div>
             <div class="project-info">
-              <h3>Smart Irrigation System</h3>
-              <p>Automated plant watering system using Arduino and sensors</p>
+              <h3>Automation bell</h3>
+              <p>
+                It was the tikkun olam outside the school of making the
+                automatic Bell to another school
+              </p>
+              <div class="project-tech">
+                <span>Arduino</span>
+                <span>C++</span>
+                <span>IoT</span>
+              </div>
+              <a href="#" class="project-link"
+                >View Project <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="project-card fade-in delay-1">
+            <div class="project-image">
+              <img src="e-bike.png" alt="E-bike Project" />
+            </div>
+            <div class="project-info">
+              <h3>E-bike project</h3>
+              <p>The electronic bike that uses electricity without pedaling</p>
               <div class="project-tech">
                 <span>Arduino</span>
                 <span>C++</span>
@@ -902,10 +809,9 @@
             These documents reflect my professional journey, academic
             commitment, and the impact I've made:
           </p>
-
           <div class="rec-buttons">
             <a
-              href="files/Recommendation_Letter_ByiringiroFrank.pdf"
+              href="https://docs.google.com/document/d/e/2PACX-1vT9xyJC6qhr2Jb93MF34QTkMLpd4hNOTilVFDzv1L48Cdmf51lGKImTqbZauqMTBVuVhLTmb0y1kVNM/pub"
               target="_blank"
               class="rec-btn"
             >
@@ -919,11 +825,10 @@
               <i class="fas fa-eye"></i> View Cover Letter
             </a>
           </div>
-
           <p class="rec-note">
             Need a customized letter or have questions?
-            <a href="mailto:fbyiringiro24@gmail.com" class="rec-link">
-              <i class="fas fa-envelope"></i> Email me here </a
+            <a href="mailto:fbyiringiro24@gmail.com" class="rec-link"
+              ><i class="fas fa-envelope"></i> Email me here</a
             >.
           </p>
         </div>
