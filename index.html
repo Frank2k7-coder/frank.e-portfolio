@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
+     <style>
       /* Loader Styles */
       .loader {
         position: fixed;
@@ -168,6 +168,14 @@
         height: 100%;
         object-fit: cover;
         z-index: -1;
+      }
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
       }
       .overlay-content {
         text-align: center;
@@ -609,6 +617,53 @@
           font-size: 1rem;
         }
       }
+      .certificates-section {
+        padding: 5rem 0;
+      }
+
+      .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .certificate-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+        display: grid;
+        grid-template-columns: auto;
+      }
+
+      .certificate-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .certificate-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .certificate-info {
+        padding: 1.5rem;
+      }
+
+      .certificate-info h3 {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .certificate-info p {
+        color: var(--gray);
+        line-height: 1.6;
+      }
+
       @media (max-width: 576px) {
         .content-boxes {
           grid-template-columns: 1fr;
@@ -647,9 +702,10 @@
           <nav>
             <a href="index.html">Home</a>
             <a href="#contact">Contact</a>
-            <a href="#documents">Documents</a>
+            <a href="#certificates">Awards</a>
+            <a href="#projects" >projects</a>
             <a href="cv.html">My C.V</a>
-            <a href="#aboutme">Biography</a>
+            <a href="#biography">Biography</a>
           </nav>
         </div>
         <div class="right-nav">
@@ -659,12 +715,14 @@
     </header>
 
     <section class="video-banner">
-      <video autoplay muted loop playsinline>
-        <source
-          src="https://www.w3schools.com/howto/rain.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <iframe
+        src="https://www.youtube.com/embed/RR2EI8EEOOw?autoplay=1&mute=1&loop=1&playlist=RR2EI8EEOOw&controls=0&showinfo=0&rel=0"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      >
+      </iframe>
+
       <div class="overlay-content fade-in">
         <h2 class="word" id="typing"></h2>
         <p class="delay-1">
@@ -678,7 +736,7 @@
     </section>
 
     <main>
-      <section class="intro" id="about">
+      <section class="intro" id="biography">
         <img src="png.jpg" alt="Frank's image" class="profile-pic fade-in" />
         <div class="about fade-in delay-1">
           <div class="title">A bit about me</div>
@@ -699,9 +757,9 @@
         <div class="projects-grid">
           <div class="project-card fade-in">
             <div class="project-image">
-              <img src="Screenshot 2025-06-21 8.55.28 PM.png" alt="Web Development Project " />
+              <img src="stem.png" alt="Web Development Project" />
             </div>
-            <div class="project-info">
+            <div class="project-info" id="projects">
               <h3>Lumi sense</h3>
               <p>Me and my friends we present our project on stem day</p>
               <div class="project-tech">
@@ -716,7 +774,7 @@
           </div>
           <div class="project-card fade-in">
             <div class="project-image">
-              <img src="Screenshot 2025-06-21 8.50.39 PM.png" Project" alt="E-bike Project " />
+              <img src="e-bike1.png" alt="Web Development Project" />
             </div>
             <div class="project-info">
               <h3>Automation bell</h3>
@@ -736,7 +794,7 @@
           </div>
           <div class="project-card fade-in delay-1">
             <div class="project-image">
-              <img src="e-bike1.png" />
+              <img src="e-bike.png" alt="E-bike Project" />
             </div>
             <div class="project-info">
               <h3>E-bike project</h3>
@@ -746,7 +804,7 @@
                 <span>C++</span>
                 <span>IoT</span>
               </div>
-              <a href="e-bike1.png" class="project-link"
+              <a href="#" class="project-link"
                 >View Project <i class="fas fa-arrow-right"></i
               ></a>
             </div>
@@ -754,7 +812,80 @@
         </div>
       </section>
 
-      <section class="content-section" id="aboutme" >
+      <section class="certificates-section fade-in" id="certificates">
+        <h2 class="section-title">
+          <i class="fas fa-certificate"></i> My Certificates
+        </h2>
+        <div class="certificates-grid">
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="maths.png" alt="Certificate of Participation" />
+            </div>
+            <div class="certificate-info">
+              <h3>RWanda Maths Olympiad</h3>
+              <p>
+                Awarded for participating in Rwanda Maths Olympiads in 2023/2024
+                on round one and round 2 editions
+              </p>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="stemcamp.png" alt="Tech Bootcamp Certificate" />
+            </div>
+            <div class="certificate-info">
+              <h3>Stem Camp Certificate</h3>
+              <p>Certificate of participating in stem camp</p>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="dreamers.png" alt="Certificate of Participation" />
+            </div>
+            <div class="certificate-info">
+              <h3>Dreamers Academy Camp</h3>
+              <p>
+                Participated in the Dreamers Academy Camp, a specialized program
+                designed to enhance public speaking skills. Gained invaluable
+                experience in effective communication, speech delivery, and
+                audience engagement.
+              </p>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="ibiraro.png" alt="Certificate of Participation" />
+            </div>
+            <div class="certificate-info">
+              <h3>
+                Certificate of being 1st runner up in science experiment
+                Competition
+              </h3>
+              <p>
+                Achieved 1st Runner-up position in the Science Experiment
+                competition by showcasing innovative problem-solving techniques
+                and presenting a well-executed, hands-on scientific
+                demonstration.
+              </p>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="science.png" alt="Certificate of Participation" />
+            </div>
+            <div class="certificate-info">
+              <h3>Science Competition</h3>
+              <p>
+                Awarded first place in the School science quiz competition by
+                demonstrating outstanding knowledge and quick problem-solving
+                skills across various scientific topics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
         <h2 class="section-title">My Journey</h2>
         <div class="content-boxes">
           <div class="box fade-in">
@@ -802,7 +933,7 @@
         </div>
       </section>
 
-      <section class="recommendation-section fade-in" id="documents" >
+      <section class="recommendation-section fade-in">
         <div class="container">
           <h2 class="section-heading">
             <i class="fas fa-file-alt"></i> Recommendations & Cover Letter
